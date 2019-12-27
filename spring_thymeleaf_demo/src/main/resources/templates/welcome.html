@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+<!-- <script th:inline="javascript">
+	const user = /* [[${user}]] */ {"testuser":"test"};
+	const age = /* [[${user.age}]] */ 20;
+	console.log(user.name);
+	console.log(user);
+	console.log(age);
+	console.log("哈哈哈！测试js")
+</script> -->
+</head>
+<body>
+	<h1>
+		你好！<span th:text="${user.name}"></span> ！请跟我来！
+	</h1>
+	<h2>
+		你正在观看<span th:text="'thymeleaf'"> template</span>的字符串常量值！
+	</h2>
+	<h2>
+		<p>
+			今年是<span th:text="2019">1997</span>.
+		</p>
+		<p>
+			两年后是<span th:text="2021">1999</span>.
+		</p>
+	</h2>
+	<div th:if="true">你填的是true！</div>
+	<p>
+	<h2>
+		<span th:text="'欢饮您！' + ${user.name} + '!'"></span>
+	</h2>
+	<h2>
+		<span th:text="|欢迎您：${user.name}!|"></span>
+	</h2>
+	<h2>
+		<span th:text="${user.sex}?'男':'女'"></span>
+	</h2>
+	<h2>
+		<div th:switch="${user.role}">
+			<p th:case="'admin'">用户是管理员</p>
+			<p th:case="'manager'">用户是经理</p>
+			<p th:case="*">用户是别的玩意</p>
+		</div>
+	</h2>
+	<script th:inline="javascript">
+		const user = /* [[${user}]] */{
+			"testuser" : "test"
+		};
+		const age = /* [[${user.age}]] */20;
+		console.log(user.name);
+		console.log(user);
+		console.log(age);
+		console.log("哈哈哈！测试js")
+	</script>
+</body>
+</html>
