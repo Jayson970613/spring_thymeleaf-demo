@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ThymeleafContriller {
+public class ThymeleafController {
 
 	@RequestMapping("/test")
 	public String test(Model model) {
